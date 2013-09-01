@@ -1,9 +1,10 @@
 require 'spec_helper'
-# Rename this file to classname_spec.rb
-# Check other boxen modules for examples
-# or read http://rspec-puppet.com/tutorial/
-describe 'template' do
+
+describe 'sts::java' do
   it do
-    should contain_anchor('Hello_World')
+    should contain_package('STS').with({
+      :provider => 'compressed_app',
+      :source   => 'http://download.springsource.com/release/STS/3.3.0/dist/e4.3/spring-tool-suite-3.3.0.RELEASE-e4.3-macosx-cocoa-x86_64.tar.gz'
+    })
   end
 end
